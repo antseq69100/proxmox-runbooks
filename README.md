@@ -98,3 +98,42 @@ Inspired by lightweight enterprise-grade hypervisor recovery practices.
 
 - `backup-proxmox-config-golden.sh`  
   One-time immutable golden baseline backup script for Proxmox host configuration.
+
+## Usage
+
+### Automated backup
+
+Install script:
+
+
+sudo cp backup-proxmox-config-auto.sh /usr/local/sbin/
+sudo chmod +x /usr/local/sbin/backup-proxmox-config-auto.sh
+
+
+Schedule daily execution:
+
+
+sudo crontab -e
+
+
+Add:
+
+
+0 3 * * * /usr/local/sbin/backup-proxmox-config-auto.sh
+
+
+---
+
+### Golden baseline backup
+
+Run once:
+
+
+chmod +x backup-proxmox-config-golden.sh
+./backup-proxmox-config-golden.sh
+
+
+Creates immutable configuration baseline using:
+
+
+chattr +i
