@@ -90,3 +90,11 @@ This approach enables fast recovery after:
 - storage configuration loss
 
 Inspired by lightweight enterprise-grade hypervisor recovery practices.
+
+## Repository content
+
+- `backup-proxmox-config-auto.sh`  
+  Automated daily Proxmox host configuration backup script with rolling retention.
+
+- `backup-proxmox-config-golden.sh`  
+  One-time immutable golden baseline backup script for Proxmox host configuration.
